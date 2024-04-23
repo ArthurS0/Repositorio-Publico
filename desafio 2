@@ -1,0 +1,44 @@
+import matplotlib.pyplot as plt
+
+def calcular_financiamento(valor, taxa_juros, meses):
+    parcela = valor * (taxa_juros * (1 + taxa_juros) ** meses) / ((1 + taxa_juros) ** meses - 1)
+    montante_final = parcela * meses
+    return parcela, montante_final
+
+def tabela_sac(valor, taxa_juros, meses):
+    amortizacao = valor / meses
+    saldo_devedor = valor
+    parcelas = []
+    for i in range(meses):
+        juros = saldo_devedor * taxa_juros
+        parcela = amortizacao + juros
+        saldo_devedor -= amortizacao
+        parcelas.append((i+1, parcela, saldo_devedor))
+    return parcelas
+
+def plotar_grafico(parcelas):
+    meses = [x[0] for x in parcelas]
+    valores = [x[1] for x in parcelas]
+    plt.plot(meses, valores, marker='o', linestyle='-')
+    plt.title('Parcelas no Sistema SAC de Amortização')
+    plt.xlabel('Mês')
+    plt.ylabel('Valor da Parcela')
+    plt.grid(True)
+    plt.show()
+
+valor = float(input("Digite o valor do financiamento: "))
+taxa_juros = float(input("Digite a taxa de juros ao mês (em decimal): "))
+meses = int(input("Digite a quantidade de meses para pagar: "))
+
+# Calcular financiamento
+parcela, montante_final = calcular_financiamento(valor, taxa_juros, meses)
+print(f"Valor da parcela: R$ {parcela:.2f}")
+print(f"Montante final a ser pago: R$ {montante_final:.2f}")
+
+print("\nTabela SAC de Amortização:")
+print("Mês\tParcela\t\tSaldo Devedor")
+parcelas_sac = tabela_sac(valor, taxa_juros, meses)
+for parcela_sac in parcelas_sac:
+    print(f"{parcela_sac[0]}\tR$ {parcela_sac[1]:.2f}\tR$ {parcela_sac[2]:.2f}")
+
+plotar_grafico(parcelas_sac)
