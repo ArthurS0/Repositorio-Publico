@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex03</title>
+</head>
+<body>
+
+    <h1>Formulário</h1>
+
+    <fieldset>
+        <legend>Dados pessoais</legend>
+        <label for="nome">Nome:</label>
+    <input type="text" id="nome">
+    <br>
+    
+    <label for="ende">Endereço:</label>
+    <input type="text" id="ende">
+    <br>
+
+    <label for="cid">Cidade:</label>
+    <input type="text" id="cid">
+    <br>
+
+    <label for="estado">Estado:</label>
+			<select id="estado">
+				<option>São Paulo</option>
+				<option>Minas Gerais</option>
+				<option>Santa Catarina</option>
+				<option>Rio de Janeiro</option>
+			</select>
+    </fieldset>
+    <br>
+
+    <fieldset>
+        <legend>Dados profissionais</legend>
+        <label for="info">Natureza do Cargo</label>
+        <br>
+
+        <input type="radio" id="ger" name="cargo">
+        <label for="ger">Gerência</label>
+    
+        <input type="radio" id="fin" name="cargo">
+        <label for="fin">Financeiro</label>
+    
+        <input type="radio" id="rec" name="cargo">
+        <label for="rec">Recepção</label>
+        
+        <input type="radio" id="adm" name="cargo">
+    <label for="adm">Administrativo</label>
+
+    <input type="radio" id="jur" name="cargo">
+    <label for="jur">Jurídico</label>
+    <br>
+    <br>
+
+    <label for="info">Área de interesse</label>
+    <br>
+
+    <input type="checkbox" id="computação"/>
+	<label for="computação">Computação</label>
+
+    <input type="checkbox" id="biologia"/>
+	<label for="biologia">Biologia</label>
+
+    <input type="checkbox" id="meio ambiente"/>
+	<label for="meio ambiente">Meio Ambiente</label>
+
+    <input type="checkbox" id="engenharia"/>
+	<label for="engenharia">Engenharia</label>
+
+    <input type="checkbox" id="história"/>
+	<label for="história">História</label>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <label for="info">Mini-curriculo:</label>
+    <textarea id="info"></textarea>
+
+    </fieldset>
+    <br>
+
+    <input type="submit" value="Enviar"/>
+
+    <input type="reset" value="Limpar"/>
+    
+</body>
+</html>

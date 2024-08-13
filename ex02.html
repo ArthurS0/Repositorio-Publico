@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex02</title>
+</head>
+<body>
+<h2>MANUTENÇÃO DE USUÁRIOS DO SISTEMA INTERNO</h2>
+<form action="" method="">
+    <label for="nome"><b>Login</b></label>
+    <input type="text" id="login">
+    <br>
+    <br>  
+    <form action="" method="">
+        <label for="senha"><b>Senha</b></label>
+        <input type="password" id="senha">
+        <br>
+    <br>
+        <label for="status"><b>Status</b></label>
+        <select id="status">
+            <option>Inativo</option>
+            <option>Ativo</option>
+        </select>   
+<br>
+<br>
+            <b>Tipo</b>
+            <input type="radio" id="tec" name="classe">
+            <label for="tec"><b>Técnico</b></label>
+        
+            <input type="radio" id="prof" name="classe">
+            <label for="prof"><b>Professor</b></label>
+        
+            <input type="radio" id="alu" name="classe">
+            <label for="alu"><b>Aluno</b></label>
+            <br>
+            <br>
+
+            <label for="data"><b>Data Criação</b></label>
+        <input type="text" id="data">
+        <br>
+        <br>
+    
+        <b>Perfil</b>
+            <input type="radio" id="conv" name="posição">
+            <label for="conv"><b>Convidado</b></label>
+        
+            <input type="radio" id="adm" name="posição">
+            <label for="adm"><b>Administrador</b></label>
+          <br>
+          <br>
+
+          <label for="info"><b>Observações</b></label><br>
+			<textarea id="info"></textarea>
+            <br>
+            <br>
+            <label for="info"><b>Módulos</b></label>
+            <input type="checkbox" id="compras"/>
+	<label for="compras"><b>Compras</b></label>
+
+	<input type="checkbox" id="bibli"/>
+	<label for="bibli"><b>Biblioteca</b></label>
+
+	<input type="checkbox" id="aca"/>
+	<label for="aca"><b>Acadêmico</b></label>
+
+    <input type="checkbox" id="doc"/>
+	<label for="doc"><b>Documentação</b></label>
+
+	<input type="checkbox" id="rec"/>
+	<label for="rec"><b>Recursos Humanos</b></label>
+    <br>
+
+    <input type="submit" value="Cadastrar"/>
+
+    <input type="reset" value="Excluir"/>
+
+</body>
+</html>
