@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajuste Salarial</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    h1 {
+        color: #333;
+    }
+    input {
+        padding: 5px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #444;
+    }
+    p {
+        margin: 10px;
+        color: #333;
+    }
+</style>
+<body>
+    <h1>Reajuste Salarial</h1>
+    <input type="number" id="salarioAtual" placeholder="Salário Atual">
+    <button onclick="calcularReajuste()">Calcular Reajuste</button>
+    <p id="resultado"></p>
+</body>
+<script>
+    function calcularReajuste() {
+        let salario = Number(document.getElementById('salarioAtual').value);
+        let resultado = document.getElementById('resultado');
+        let reajuste = 0;
+
+        if (salario >= 1500 && salario < 1750) {
+            reajuste = salario * 0.15;
+        } else if (salario >= 1750 && salario < 2000) {
+            reajuste = salario * 0.12;
+        } else if (salario >= 2000 && salario < 3000) {
+            reajuste = salario * 0.09;
+        } else if (salario >= 3000) {
+            reajuste = salario * 0.06;
+        }
+
+        let salarioReajustado = salario + reajuste;
+        resultado.innerHTML = `Reajuste de R$ ${reajuste.toFixed(2)} <br>Salário reajustado: R$ ${salarioReajustado.toFixed(2)}`;
+    }
+</script>
+</html>

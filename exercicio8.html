@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Média de Notas</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    h1 {
+        color: #333;
+    }
+    input {
+        padding: 5px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #444;
+    }
+    p {
+        margin: 10px;
+        color: #333;
+    }
+</style>
+<body>
+    <h1>Média de Notas</h1>
+    <input type="number" id="nota1" placeholder="Nota 1">
+    <input type="number" id="nota2" placeholder="Nota 2">
+    <input type="number" id="nota3" placeholder="Nota 3">
+    <button onclick="calcularMedia()">Calcular Média</button>
+    <p id="resultado"></p>
+</body>
+<script>
+    function calcularMedia() {
+        let nota1 = Number(document.getElementById('nota1').value);
+        let nota2 = Number(document.getElementById('nota2').value);
+        let nota3 = Number(document.getElementById('nota3').value);
+        let media = (nota1 + nota2 + nota3) / 3;
+        let resultado = document.getElementById('resultado');
+
+        if (media >= 6) {
+            resultado.innerHTML = `Média: ${media.toFixed(2)} <br>Aprovado`;
+        } else if (media >= 4) {
+            resultado.innerHTML = `Média: ${media.toFixed(2)} <br>Recuperação`;
+        } else {
+            resultado.innerHTML = `Média: ${media.toFixed(2)} <br>Reprovado`;
+        }
+    }
+</script>
+</html>

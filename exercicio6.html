@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maior e Menor Número</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    h1 {
+        color: #333;
+    }
+    input {
+        padding: 5px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #444;
+    }
+    p {
+        margin: 10px;
+        color: #333;
+    }
+</style>
+<body>
+    <h1>Maior e Menor Número</h1>
+    <input type="number" id="num1" placeholder="Número 1">
+    <input type="number" id="num2" placeholder="Número 2">
+    <button onclick="maiorEMenor()">Ver Maior e Menor</button>
+    <p id="resultado"></p>
+</body>
+<script>
+    function maiorEMenor() {
+        let num1 = Number(document.getElementById('num1').value);
+        let num2 = Number(document.getElementById('num2').value);
+        let maior = Math.max(num1, num2);
+        let menor = Math.min(num1, num2);
+        let resultado = document.getElementById('resultado');
+        resultado.innerHTML = `Maior número: ${maior} <br>Menor número: ${menor}`;
+    }
+</script>
+</html>

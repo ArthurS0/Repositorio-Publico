@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto INSS</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    h1 {
+        color: #333;
+    }
+    input {
+        padding: 5px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    button {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #444;
+    }
+    p {
+        margin: 10px;
+        color: #333;
+    }
+</style>
+<body>
+    <h1>Cálculo de Desconto INSS</h1>
+    <input type="number" id="salario" placeholder="Salário">
+    <button onclick="calcularINSS()">Calcular INSS</button>
+    <p id="resultado"></p>
+</body>
+<script>
+    function calcularINSS() {
+        let salario = Number(document.getElementById('salario').value);
+        let resultado = document.getElementById('resultado');
+        let desconto = 0;
+        
+        if (salario <= 1212.00) {
+            desconto = salario * 0.075;
+        } else if (salario <= 2427.35) {
+            desconto = salario * 0.09;
+        } else if (salario <= 3641.03) {
+            desconto = salario * 0.12;
+        } else if (salario <= 7087.22) {
+            desconto = salario * 0.14;
+        } else {
+            desconto = 7087.22 * 0.14;
+        }
+
+        let salarioFinal = salario - desconto;
+        resultado.innerHTML = `Desconto INSS: R$ ${desconto.toFixed(2)} <br>Salário final: R$ ${salarioFinal.toFixed(2)}`;
+    }
+</script>
+</html>

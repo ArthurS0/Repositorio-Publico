@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 02</title>
+    <style>
+        body{
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input, button{
+        padding: 5px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        }
+
+        p {
+        margin: 10px;
+        border: solid 1px black;
+        padding: 200px;
+        height: 5px;
+    }
+    </style>
+</head>
+<body>
+    <h1>Classificando Triângulos</h1>
+    <input type="number" step="0.01" id="a" placeholder="Lado A">
+    <input type="number" step="0.01" id="b" placeholder="Lado B">
+    <input type="number" step="0.01" id="c" placeholder="Lado C">
+    <button onclick="classificar()">Classificar</button>
+    <p id="resultado"></p>
+</body>
+<script>
+    const resultado = document.getElementById('resultado');
+    function classificar(){
+        let a = Number(document.getElementById('a').value);
+        let b = Number(document.getElementById('b').value);
+        let c = Number(document.getElementById('c').value);
+
+        if (a + b <= c || a + c <= b || b + c <= a){
+            resultado.innerHTML = 'Não é um Triângulo';
+        } else {
+
+        if(a == b && b == c){
+            resultado.innerHTML = 'Triângulo Equilátero';
+        }else if(a != b && b != c && a != c){
+            resultado.innerHTML = 'Triângulo Escaleno';
+        }else {
+            resultado.innerHTML = 'Triângulo Isósceles';
+        }
+    }
+}
+</script>
+</html>
