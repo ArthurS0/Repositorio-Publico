@@ -1,0 +1,9 @@
+POST /desconto-inss - Calcula o desconto do INSS de acordo com o salário.
+POST /triangulo - Classifica o tipo do triângulo.
+POST /aumento-mercadoria - Calcula o aumento no preço da mercadoria.
+POST /maior-numero - Encontra o maior número entre 6 valores.
+POST /ordem-crescente - Ordena 5 números em ordem crescente.
+POST /maior-menor - Encontra o maior e menor entre dois números.
+POST /reajuste-salarial - Calcula o reajuste salarial do funcionário.
+POST /situacao-aluno - Informa a situação do aluno (aprovado, recuperação, reprovado).
+POST /desconto-venda - Calcula o desconto baseado no tipo de produto.
